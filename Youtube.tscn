@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://o3eempaoaqdg"]
+[gd_scene load_steps=9 format=3 uid="uid://o3eempaoaqdg"]
 
+[ext_resource type="Script" path="res://YoutubeTool.gd" id="1_igswa"]
 [ext_resource type="Texture2D" uid="uid://dxguadpvg68bf" path="res://bjg-star-wars-poster-palette-1x.png" id="1_votai"]
+[ext_resource type="FontFile" uid="uid://ch4imtt4c17el" path="res://terminal-grotesque_open.otf" id="2_kpuqj"]
+[ext_resource type="Script" path="res://ContentTool.gd" id="4_81dhd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eynib"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_ew32e"]
+default_font = ExtResource("2_kpuqj")
+default_font_size = 45
 
 [sub_resource type="LabelSettings" id="LabelSettings_urnb3"]
 font_color = Color(0, 0, 0, 1)
@@ -17,6 +24,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_igswa")
+title = null
+content = null
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -62,11 +72,13 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/ColorRect/HBoxContainer"]
 layout_mode = 2
-text = "Youtube"
+theme = SubResource("Theme_ew32e")
+text = "<null>"
 label_settings = SubResource("LabelSettings_urnb3")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/MarginContainer/VBoxContainer/ColorRect/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
 stretch_mode = 3
 
 [node name="Button" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/ColorRect/HBoxContainer/AspectRatioContainer"]
@@ -79,3 +91,18 @@ material = SubResource("CanvasItemMaterial_568is")
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("1_votai")
+
+[node name="Content" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_81dhd")
