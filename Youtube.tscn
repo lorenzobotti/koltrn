@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://o3eempaoaqdg"]
+
+[ext_resource type="Texture2D" uid="uid://dxguadpvg68bf" path="res://bjg-star-wars-poster-palette-1x.png" id="1_votai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eynib"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_urnb3"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_568is"]
+
+[node name="YTWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eynib")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "Youtube"
+label_settings = SubResource("LabelSettings_urnb3")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/MarginContainer/VBoxContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Button" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/ColorRect/HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_568is")
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_votai")

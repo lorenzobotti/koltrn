@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c8f3vj6dbgqpc"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.995345, 0, 0.101777, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+size_flags_horizontal = 4
